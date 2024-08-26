@@ -4,10 +4,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.testng.Assert;
-import org.testng.annotations.BeforeTest;
-import org.testng.annotations.Parameters;
-import org.testng.annotations.Test;
 
 public class HomePage extends BasePage {
 
@@ -35,21 +31,29 @@ public class HomePage extends BasePage {
     }
 
     public CartPage purchaseProduct() {
+        this.isElementDisplayed(firstProductBtn);
         firstProductBtn.click();
+        this.isElementDisplayed(cartBtn);
         cartBtn.click();
         return new CartPage(this.driver);
     }
 
     public CartPage addThreeProducts(){
+        this.isElementDisplayed(firstProductBtn);
         firstProductBtn.click();
+        this.isElementDisplayed(secondProductBtn);
         secondProductBtn.click();
+        this.isElementDisplayed(thirdProductBtn);
         thirdProductBtn.click();
+        this.isElementDisplayed(cartBtn);
         cartBtn.click();
         return new CartPage(this.driver);
     }
 
     public LoginPage logout(){
+        this.isElementDisplayed(menuBtn);
         menuBtn.click();
+        this.isElementDisplayed(this.logoutBtn);
         logoutBtn.click();
         return new LoginPage(this.driver);
     }

@@ -1,6 +1,7 @@
 package tests;
 
-import org.testng.annotations.Parameters;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 import pages.*;

@@ -27,11 +27,8 @@ public class LoginPage extends BasePage {
     public void login(String username, String password) {
         usernameField.sendKeys(username);
         passwordField.sendKeys(password);
+        this.isElementDisplayed(loginBtn);
         loginBtn.click();
-    }
-
-    public boolean isLoginSuccessful() {
-        return loginValidation.isDisplayed();
     }
 
     public boolean isLoginPage(){

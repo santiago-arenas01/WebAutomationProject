@@ -29,20 +29,18 @@ public class CartPage extends BasePage{
     }
 
     public UserInfoPage checkoutCart(){
+        this.isElementDisplayed(checkoutBtn);
         checkoutBtn.click();
         return new UserInfoPage(this.driver);
     }
 
     public void removeProducts() {
-        if (removeFirstProBtn.isDisplayed()) {
-            removeFirstProBtn.click();
-        }
-        if (removeSecondProBtn.isDisplayed()) {
-            removeSecondProBtn.click();
-        }
-        if (removeThirdProBtn.isDisplayed()) {
-            removeThirdProBtn.click();
-        }
+        this.isElementDisplayed(removeFirstProBtn);
+        removeFirstProBtn.click();
+        this.isElementDisplayed(removeSecondProBtn);
+        removeSecondProBtn.click();
+        this.isElementDisplayed(removeThirdProBtn);
+        removeThirdProBtn.click();
     }
 
     public boolean isCartEmpty(){

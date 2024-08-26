@@ -25,9 +25,11 @@ public class UserInfoPage extends BasePage{
     }
 
     public OverviewPage sendUserInfo(String firstName, String lastName, String zipCode) {
+        this.isElementDisplayed(firstNameField);
         firstNameField.sendKeys(firstName);
         lastNameField.sendKeys(lastName);
         zipCodeField.sendKeys(zipCode);
+        this.isElementDisplayed(continueBtn);
         continueBtn.click();
         return new OverviewPage(this.driver);
     }

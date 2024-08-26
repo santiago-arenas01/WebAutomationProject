@@ -1,6 +1,5 @@
 package tests;
 
-import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 import pages.*;

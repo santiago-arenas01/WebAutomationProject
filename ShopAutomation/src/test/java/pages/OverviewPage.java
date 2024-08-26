@@ -16,6 +16,7 @@ public class OverviewPage extends BasePage {
     }
 
     public CheckoutCompletePage clickOnFinish(){
+        this.isElementDisplayed(finishBtn);
         finishBtn.click();
         return new CheckoutCompletePage(this.driver);
     }

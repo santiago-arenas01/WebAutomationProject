@@ -20,11 +20,10 @@ public class BaseTest {
         driver.get(url);
         LoginPage loginPage = new LoginPage(driver);
         loginPage.login(username, password);
-        loginPage.isLoginSuccessful();
     }
 
-    /*@AfterTest
+    @AfterTest
     public void closeNavigator(){
         driver.close();
-    }*/
+    }
 }
