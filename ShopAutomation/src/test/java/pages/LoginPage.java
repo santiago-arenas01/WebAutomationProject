@@ -1,5 +1,6 @@
 package pages;
 
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -15,11 +16,11 @@ public class LoginPage extends BasePage {
     @FindBy(id = "login-button")
     private WebElement loginBtn;
 
-    @FindBy(id = "welcomeMessage")
-    private WebElement welcomeMessage;
+    @FindBy(className = "header_label")
+    private WebElement loginValidation;
 
-    public LoginPage(String driverPath, String url) {
-        super(driverPath, url);
+    public LoginPage(WebDriver driver) {
+        super(driver);
         PageFactory.initElements(driver, this);
     }
 
@@ -30,6 +31,10 @@ public class LoginPage extends BasePage {
     }
 
     public boolean isLoginSuccessful() {
-        return welcomeMessage.isDisplayed();
+        return loginValidation.isDisplayed();
+    }
+
+    public boolean isLoginPage(){
+        return loginBtn.isDisplayed();
     }
 }
